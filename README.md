@@ -9,6 +9,13 @@ Webp Polyfill is a polyfill (adds support for non-native features) for webp imag
 ### Dependencies
 - [jQuery](https://jquery.com/)
 
+### Instalation
+bower
+
+```
+bower install https://github.com/FallingSnow/webp-polyfill.git
+```
+
 ### Example
 To evaluate a single `img` tag.
 ```
