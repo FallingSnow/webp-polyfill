@@ -26,7 +26,7 @@ To evaluate a single `img` tag.
 webpPolyfill.evaluate(jQuery('img'));
 ```
 
-To evaluate a all `img` tags in a parent element.
+To evaluate all `img` tags in a parent element.
 ```
 webpPolyfill.evaluateParent('body');
 ```
