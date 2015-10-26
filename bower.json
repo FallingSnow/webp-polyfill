@@ -1,0 +1,24 @@
+{
+  "name": "webp-polyfill",
+  "main": "webp-polyfill.js",
+  "authors": [
+    "Ayrton Sparling <snowboarding96@yahoo.com>"
+  ],
+  "description": "Webp Polyfill is a polyfill (adds support for non-native features) for webp images in the browser.",
+  "moduleType": [],
+  "keywords": [
+    "webp"
+  ],
+  "license": "DWTFYWWI",
+  "homepage": "https://github.com/FallingSnow/webp-polyfill",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}
