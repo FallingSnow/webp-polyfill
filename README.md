@@ -24,15 +24,24 @@ webpPolyfill.evaluateParent('body');
 - `evaluate(element[, dontAttach])`
     * `element` - The image element you are trying to turn into a datauri.
     * `dontAttach` - If you don't want a `src` attribute listener to be placed on the element so that every time the src changes in the future it will be evaluated, set this to true.
+    * returns nothing.
 - `evaluateParent(element[, dontAttach])`
     * `element` - The parent element in which to search for webp image within.
     * `dontAttach` - If you don't want a `src` attribute listener to be placed on the element so that every time the src changes in the future it will be evaluated, set this to true.
+    * returns nothing.
 - `detach(element)`
     * `element` - The image element you want to remove the src attribute listener from.
+    * returns nothing.
 - `getDataUriOfWebpImage(element)`
     * `element` - The image element you want to get a datauri from.
+    * returns `(err, string)`
+        - `err` - null if unless an error was encountered.
+        - `string` - Contains the datauri.
 - `getDataUriOfWebpUrl(url)`
     * `url` - The url you want to get a datauri from.
+    * returns `(err, string)`
+        - `err` - null if unless an error was encountered.
+        - `string` - Contains the datauri.
 
 ### License
 
