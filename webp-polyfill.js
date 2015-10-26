@@ -143,13 +143,13 @@ var webpPolyfill = {
             return('Image is does not have a webp extension.', src);
         var canvas = jQuery('<canvas style="display: none;"></canvas>');
         jQuery.ajax(src, {processData: false, mimeType: 'text/plain; charset=x-user-defined'}).done(function (data) {
-            return (null, webpPolyfill._WebPDecodeAndDraw(canvas, data));
+            return webpPolyfill._WebPDecodeAndDraw(canvas, data);
         });
     },
     getDataUriOfWebpUrl: function (url) {
         var canvas = jQuery('<canvas style="display: none;"></canvas>');
         jQuery.ajax(url, {processData: false, mimeType: 'text/plain; charset=x-user-defined'}).done(function (data) {
-            return (null, webpPolyfill._WebPDecodeAndDraw(canvas, data));
+            return webpPolyfill._WebPDecodeAndDraw(canvas, data);
         });
     }
 }

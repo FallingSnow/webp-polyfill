@@ -41,13 +41,11 @@ webpPolyfill.evaluateParent('body');
     * returns nothing.
 - `getDataUriOfWebpImage(element)`
     * `element` - The image element you want to get a datauri from.
-    * returns `(err, string)`
-        - `err` - null unless an error was encountered.
+    * returns `string`
         - `string` - Contains the datauri.
 - `getDataUriOfWebpUrl(url)`
     * `url` - The url you want to get a datauri from.
-    * returns `(err, string)`
-        - `err` - null unless an error was encountered.
+    * returns `string`
         - `string` - Contains the datauri.
 
 ### License
