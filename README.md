@@ -5,6 +5,7 @@ Webp Polyfill is a polyfill (adds support for non-native features) for webp imag
 ## Created using
 - [libwebpjs](http://libwebpjs.hohenlimburg.org/v0.2.0/) By Dominik Homberger
 - segment of [libwebpwrapper](https://wordpress.org/plugins/wp-webp/) By [tuxlog](http://www.tuxlog.de/)
+- [native support detection](https://queryj.wordpress.com/2012/06/11/detecting-webp-support/) By [James Westgate](https://twitter.com/jameswestgate)
 
 ### Dependencies
 - [jQuery](https://jquery.com/)
@@ -15,6 +16,9 @@ bower
 ```
 bower install https://github.com/FallingSnow/webp-polyfill.git
 ```
+
+### When to use
+Don't worry about it, webp-polyfill already checks if webp is natively supported.
 
 ### Example
 To evaluate a single `img` tag.
@@ -47,6 +51,9 @@ webpPolyfill.evaluateParent('body');
     * `url` - The url you want to get a datauri from.
     * returns `string`
         - `string` - Contains the datauri.
+
+### Special thanks to
+[All those that made libwebp](https://github.com/webmproject/libwebp/graphs/contributors)
 
 ### License
 

@@ -1,3 +1,13 @@
+// https://queryj.wordpress.com/2012/06/11/detecting-webp-support/
+function testWebP(callback) {
+    var webP = new Image();
+    webP.src = 'data:image/webp;base64,UklGRi4AAABXRUJQVlA4TCEAAAAvAUAAEB8wAiMwAgSSNtse/cXjxyCCmrYNWPwmHRH9jwMA';
+    webP.onload = webP.onerror = function () {
+        callback(webP.height === 2);
+    };
+}
+;
+
 var webpPolyfill = {
     _convertBinaryToArray: function (binary) {
         var arr = new Array();
@@ -124,13 +134,26 @@ var webpPolyfill = {
             });
         }
     },
+    _webpNotSupported: function (func) {
+        if (webpPolyfill._nativeSupport === null)
+            setTimeout(function () {
+                webpPolyfill._webpNotSupported(func);
+            }, 100);
+        else if (webpPolyfill._nativeSupport === false)
+            func();
+    },
     evaluateParent: function (parent, dontAttach) {
-        jQuery(parent).find("img").each(function (i, img) {
-            webpPolyfill._process(img, dontAttach);
+        webpPolyfill._webpNotSupported(function () {
+            jQuery(parent).find("img").each(function (i, img) {
+                webpPolyfill._process(img, dontAttach);
+            });
         });
     },
     evaluate: function (element, dontAttach) {
-        webpPolyfill._process(element, dontAttach);
+        webpPolyfill._webpNotSupported(function () {
+            if (!webpPolyfill._nativeSupport)
+                webpPolyfill._process(element, dontAttach);
+        });
     },
     detach: function (img) {
         img = jQuery(img);
@@ -151,5 +174,10 @@ var webpPolyfill = {
         jQuery.ajax(url, {processData: false, mimeType: 'text/plain; charset=x-user-defined'}).done(function (data) {
             return webpPolyfill._WebPDecodeAndDraw(canvas, data);
         });
-    }
+    },
+    _nativeSupport: null
 };
+
+testWebP(function (supported) {
+    webpPolyfill._nativeSupport = supported ? true : false;
+});
