@@ -140,7 +140,7 @@ var webpPolyfill = {
         img = jQuery(img);
         var src = img.attr('src');
         if (src.split('.').pop() !== 'webp')
-            return('Image is does not have a webp extension.', src);
+            return false;
         var canvas = jQuery('<canvas style="display: none;"></canvas>');
         jQuery.ajax(src, {processData: false, mimeType: 'text/plain; charset=x-user-defined'}).done(function (data) {
             return webpPolyfill._WebPDecodeAndDraw(canvas, data);
@@ -152,4 +152,4 @@ var webpPolyfill = {
             return webpPolyfill._WebPDecodeAndDraw(canvas, data);
         });
     }
-}
+};
